@@ -1,0 +1,67 @@
+{
+  "name": "eslint-config-linter-react",
+  "version": "0.0.1",
+  "description": "ReactJS ESLint config",
+  "main": "index.js",
+  "scripts": {
+    "prelint": "eclint check * rules/* test/*",
+    "lint": "eslint .",
+    "pretests-only": "node ./test/requires",
+    "tests-only": "babel-tape-runner ./test/test-*.js",
+    "prepublish": "(in-install || eslint-find-rules --unused) && (not-in-publish || npm test) && safe-publish-latest",
+    "pretest": "npm run --silent lint",
+    "test": "npm run --silent tests-only",
+    "link:eslint": "cd node_modules/eslint && npm link --production && cd -",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Paul-Petrash/linter-react"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "javascript",
+    "styleguide",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Paul-Petrash/linter-react/issues"
+  },
+  "homepage": "https://github.com/Paul-Petrash/linter-react",
+  "dependencies": {
+    "eslint-config-linter": "git+https://github.com/Paul-Petrash/linter.git",
+    "object.assign": "^4.1.0",
+    "object.entries": "^1.1.2"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.8.7",
+    "babel-preset-airbnb": "^4.5.0",
+    "babel-tape-runner": "^3.0.0",
+    "eclint": "^2.8.1",
+    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0",
+    "eslint-find-rules": "^3.5.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4 || ^3 || ^2.3.0 || ^1.7.0",
+    "in-publish": "^2.0.1",
+    "react": ">= 0.13.0",
+    "safe-publish-latest": "^1.1.4",
+    "tape": "^5.0.1"
+  },
+  "peerDependencies": {
+    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4 || ^3 || ^2.3.0 || ^1.7.0"
+  },
+  "engines": {
+    "node": ">= 6"
+  }
+}
